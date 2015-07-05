@@ -11,7 +11,7 @@ Aplicación mobile para quicklibrary.
 </description>
 
 <author href="https://quicklibrary.com" email="contacto@quicklibrary.com">
-Your Name
+Fishers
 </author>
-
+<icon src="img/icono.png" />
 </widget>
