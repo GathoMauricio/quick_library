@@ -13,5 +13,5 @@ Aplicación mobile para quicklibrary.
 <author href="https://quicklibrary.com" email="contacto@quicklibrary.com">
 Fishers
 </author>
-<icon src="img/icono_app.png" />
+<icon src="icono_app.png" />
 </widget>
