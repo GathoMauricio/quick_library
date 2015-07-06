@@ -23,6 +23,15 @@ function cargarRegistro()
 {
 	$("#contenedor_principal").load("http://quicklibraryfishers.com/mobile/registro.php")
 }
+function cargarRecuperacion()
+{
+	$("#contenedor_principal").load("http://quicklibraryfishers.com/mobile/recuperacion.php")
+}
+
+
+
+
+
 function insertarAlumno()
 {
 	var matricula=$("#txt_matricula_registro").prop("value");
