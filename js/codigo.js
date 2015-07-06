@@ -55,7 +55,12 @@ function cargarFavoritos(id)
 		});
 	
 }
-
+function cargarPerfil(id)
+{
+	$.post("http://quicklibraryfishers.com/mobile/perfil.php",{id_alumno:id},function(data){
+		$("#contenedor_principal").html(data)
+		});
+}
 
 
 function insertarAlumno()
@@ -111,9 +116,8 @@ function solicitarCubiculo(id_cubiculo)
 {
 	var alumno=$("#txt_id_alumno").prop("value");
 	var hora=$("#txt_hora_cubiculo_"+id_cubiculo).prop("value");
-	alert(hora);
 	if(confirm("¿Realmente deseas solicitar este cubiculo?")){
-		alert("se descargará tu comprobante en tu equipo");
+	alert("se descargará tu comprobante en tu equipo");
 	navigator.app.loadUrl("http://quicklibraryfishers.com/php/generar_solicitud_cubiculo.php?id_cubiculo="+id_cubiculo+"&id_alumno="+alumno+"&hora="+hora, { openExternal:true });
 		cargarCubiculos($("#txt_id_alumno").prop("value"));
 	}
@@ -139,4 +143,21 @@ function eliminarFavorito(id)
 			cargarFavoritos(alumno);
 		});
 	}
+}
+function actualizarAlumno()
+{
+	var telefono=$("#txt_telefono_alumno").prop("value");
+	var email=$("#txt_email_alumno").prop("value");
+	var direccion=$("#txt_direccion_alumno").prop("value");
+	var contrasena=$("#txt_contrasena_alumno").prop("value");
+	$.post("http://quicklibraryfishers.com/control/actualizar_alumno.php",{
+		telefono:telefono,
+		email:email,
+		direccion:direccion,
+		contrasena:contrasena
+	},function(datos){
+			alert(datos)
+			var alumno=$("#txt_id_alumno").prop("value");
+			cargarPerfil(alumno);
+		});
 }
