@@ -5,11 +5,12 @@ background-color: #dfe3ee;
 #contenedor_principal
 {
 	width:100%;
-	padding:30px;	
+	padding:10px;	
+	
 } 
 .publicacion
 {
-	width: 80%;
+	width: 90%;
 	height: auto;
 	background-color:#f7f7f7;
 	border:1px solid #3b5998;
