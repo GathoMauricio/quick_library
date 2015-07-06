@@ -10,8 +10,8 @@
 Aplicación mobile para quicklibrary.
 </description>
 
-<author href="https://quicklibrary.com" email="contacto@quicklibrary.com">
+<author href="http://quicklibraryfishers.com/" email="contacto@quicklibraryfishers.com">
 Fishers
 </author>
-<icon src="icono_app.png" />
+<icon src="img/icono_app.png" />
 </widget>

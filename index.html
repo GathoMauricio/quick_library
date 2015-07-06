@@ -8,7 +8,10 @@
 
 
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        
+        <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/codigo.js"></script>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/codigo.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
 
         function onBodyLoad()
@@ -26,7 +29,21 @@
         </script> 
     </head>
     <body onload="onBodyLoad()">
-    	Te quiero Karlent :3 
+    <center>
+    <div id="contenedor_principal">
+    	<label>Bienvenido</label><br>
+        <img src="img/icono_app.png" width="70"><br><br>
+        
+    	<input type="number" id="txt_matricula_login" class="form-control" placeholder="Ingresa tu mátricula...">
+        <br>
+        <input type="password" id="txt_contrasena_login" class="form-control" placeholder="Ingresa tu contraseña..."><br><br>
+        <button class="btn btn-info" onClick="validarAlumno();">Ingresar al sistema</button>
+        <br><br>
+        <a href="#"><label>Regístrate</label></a>
+        <br><br>
+        <a href="#"><label>¿Olvidaste tu contraseña?</label></a>
+    </div>    
+    </center>
     </body>
 </html>
 
