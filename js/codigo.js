@@ -23,3 +23,28 @@ function cargarRegistro()
 {
 	$("#contenedor_principal").load("http://quicklibraryfishers.com/mobile/registro.php")
 }
+function insertarAlumno()
+{
+	var matricula=$("#txt_matricula_registro").prop("value");
+	var contrasena=$("#txt_contrasena_registro").prop("value");
+	var nombre=$("#txt_nombre_registro").prop("value");
+	var division=$("#txt_division_registro").prop("value");
+
+	if(matricula.length<=0 || nombre.length<=0 || contrasena.length<=0)
+	{
+		alert("Por favor rellena todos los campos");
+	}else
+	{
+		$.post("http://quicklibraryfishers.com/control/insertar_alumno.php",
+			{
+				matricula:matricula,
+				nombre:nombre,
+				division:division,
+				contrasena:contrasena
+			},
+			function(datos){
+				alert(datos);
+				cargarLogin();
+		});
+	}
+}
