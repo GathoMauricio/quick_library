@@ -48,3 +48,18 @@ function insertarAlumno()
 		});
 	}
 }
+function enviarContrasena()
+{
+	var email=$("#txt_email_recuperacion").prop("value");
+	if(email.length<=0)
+	{
+		alert("Ingresa in email valido");
+	}else
+	{
+		$("#btn_recuperar").html("<img src='img/load.gif' width='20' > Espera");
+		$.post("http://quicklibraryfishers.com/control/enviar_contrasena.php",{email:email},function(datos){
+			alert(datos);
+			cargarLogin();
+		});
+	}
+}
