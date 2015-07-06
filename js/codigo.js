@@ -87,7 +87,8 @@ function solicitarPrestamo(id_libro)
 {
 	var alumno=$("#txt_id_alumno").prop("value");
 	if(confirm("¿Realmente deseas solicitar este libro?")){
-		window.location="http://quicklibraryfishers.com/php/generar_solicitud_libro.php?id_libro="+id_libro+"&id_alumno="+alumno;
+		//window.location="http://quicklibraryfishers.com/php/generar_solicitud_libro.php?id_libro="+id_libro+"&id_alumno="+alumno;
+		navigator.app.loadUrl("http://quicklibraryfishers.com/php/generar_solicitud_libro.php?id_libro="+id_libro+"&id_alumno="+alumno, { openExternal:true });
 		cargarLibros($("#txt_id_alumno").prop("value"));
 	}
 }
