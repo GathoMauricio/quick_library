@@ -39,7 +39,22 @@ function cargarLibros(id)
 		});
 	
 }
-
+function cargarCubiculos(id)
+{
+	
+	$.post("http://quicklibraryfishers.com/mobile/cubiculos.php",{id:id},function(data){
+		$("#contenedor_principal").html(data)
+		});
+	
+}
+function cargarFavoritos(id)
+{
+	
+	$.post("http://quicklibraryfishers.com/mobile/favoritos.php",{id:id},function(data){
+		$("#contenedor_principal").html(data)
+		});
+	
+}
 
 
 
@@ -92,6 +107,17 @@ function solicitarPrestamo(id_libro)
 		cargarLibros($("#txt_id_alumno").prop("value"));
 	}
 }
+function solicitarCubiculo(id_cubiculo)
+{
+	var alumno=$("#txt_id_alumno").prop("value");
+	var hora=$("#txt_hora_cubiculo_"+id_cubiculo).prop("value");
+	if(confirm("¿Realmente deseas solicitar este cubiculo?")){
+		alert("se descargará tu comprobante en tu equipo");
+	navigator.app.loadUrl("http://quicklibraryfishers.com/php/generar_solicitud_cubiculo.php?id_cubiculo="+id_cubiculoo+"&id_alumno="+alumno+"&hora="+hora, { openExternal:true });
+		cargarLibros($("#txt_id_alumno").prop("value"));
+	}
+}
+
 function agregarFavorito(id)
 {
 	var alumno=$("#txt_id_alumno").prop("value");
@@ -101,4 +127,15 @@ function agregarFavorito(id)
 	function(datos){
 			alert(datos);
 		});
+}
+function eliminarFavorito(id)
+{
+	if(confirm("¿Realmente deseas eliminar este libro de tus Favoritos?"))
+	{
+		$.post("http://quicklibraryfishers.com/control/eliminar_favorito.php",{id:id},function(datos){
+			alert(datos)
+			var alumno=$("#txt_id_alumno").prop("value");
+			cargarFavoritos(alumno);
+		});
+	}
 }
