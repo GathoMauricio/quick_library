@@ -114,8 +114,7 @@ function solicitarCubiculo(id_cubiculo)
 	alert(hora);
 	if(confirm("¿Realmente deseas solicitar este cubiculo?")){
 		alert("se descargará tu comprobante en tu equipo");
-		var link="http://quicklibraryfishers.com/php/generar_solicitud_cubiculo.php?id_cubiculo=1";
-	navigator.app.loadUrl("http://quicklibraryfishers.com/php/generar_solicitud_cubiculo.php?id_cubiculo="+id_cubiculoo+"&id_alumno="+alumno+"&hora="+hora, { openExternal:true });
+	navigator.app.loadUrl("http://quicklibraryfishers.com/php/generar_solicitud_cubiculo.php?id_cubiculo="+id_cubiculo+"&id_alumno="+alumno+"&hora="+hora, { openExternal:true });
 		cargarCubiculos($("#txt_id_alumno").prop("value"));
 	}
 }
