@@ -15,3 +15,11 @@ function validarAlumno()
 			}
 	});
 }
+function cargarLogin()
+{
+	$("#contenedor_principal").load("http://quicklibraryfishers.com/mobile/login.php");	
+}
+function cargarRegistro()
+{
+	$("#contenedor_principal").load("http://quicklibraryfishers.com/mobile/registro.php")
+}
