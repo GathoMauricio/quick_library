@@ -1,4 +1,5 @@
 // JavaScript Document
+
 function validarAlumno()
 {
 	var matricula = $("#txt_matricula_login").prop("value");
@@ -8,7 +9,10 @@ function validarAlumno()
 		function(datos){
 			if(datos>=1)
 			{
-				alert("Datos Correctos");
+				$("#txt_id_alumno").prop("value",datos);
+				cargarLibros($("#txt_id_alumno").prop("value"));
+				
+				
 			}else
 			{
 				alert("Datos Incorrectos");
@@ -27,7 +31,14 @@ function cargarRecuperacion()
 {
 	$("#contenedor_principal").load("http://quicklibraryfishers.com/mobile/recuperacion.php")
 }
-
+function cargarLibros(id)
+{
+	
+	$.post("http://quicklibraryfishers.com/mobile/libros.php",{id:id},function(data){
+		$("#contenedor_principal").html(data)
+		});
+	
+}
 
 
 

@@ -6,4 +6,24 @@ background-color: #dfe3ee;
 {
 	width:100%;
 	padding:30px;	
+} 
+.publicacion
+{
+	width: 80%;
+	height: auto;
+	background-color:#f7f7f7;
+	border:1px solid #3b5998;
+	text-align: left;
+	padding: 10px;
+	box-shadow:0px 10px 30px rgba(0,0,0,0.9);
+
+}
+.lbl_nombre{
+	color: #3b5998;
+	font-size: 18px;
+}
+.lbl_datos
+{
+	color: grey;
+	font-size: 12px;
 }
