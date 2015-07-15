@@ -39,6 +39,15 @@ function cargarLibros(id)
 		});
 	
 }
+function buscarLibro(id)
+{
+	
+	var buscar=$("#txt_buscar").prop("value");
+	$.post("http://quicklibraryfishers.com/mobile/libros.php",{id:id,buscar:buscar},function(data){
+		$("#contenedor_principal").html(data)
+		});
+	
+}
 function cargarCubiculos(id)
 {
 	
